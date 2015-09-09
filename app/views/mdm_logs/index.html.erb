@@ -1,0 +1,34 @@
+<h1>MDMログ一覧</h1>
+<h2>(データ対象日：<%= @target_extracted_date.strftime("%Y/%m/%d") %>)</h2>
+
+<h4>
+  <%= page_entries_info @mdm_logs %>
+</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tel number</th>
+      <th>User name</th>
+      <th>Device updated at</th>
+      <th>Model name</th>
+      <th>Os version</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mdm_logs.each do |mdm_log| %>
+      <tr>
+        <td><%= mdm_log.tel_number %></td>
+        <td><%= mdm_log.user_name %></td>
+        <td><%= mdm_log.device_updated_at %></td>
+        <td><%= mdm_log.model_name %></td>
+        <td><%= mdm_log.os_version %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h4>
+  <%= paginate @mdm_logs %>
+</h4>

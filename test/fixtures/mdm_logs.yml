@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  extracted_date: 2015-09-09 19:46:34
+  tel_number: MyString
+  user_name: MyString
+  device_updated_at: 2015-09-09 19:46:34
+  model_name: MyString
+  os_version: MyString
+
+two:
+  extracted_date: 2015-09-09 19:46:34
+  tel_number: MyString
+  user_name: MyString
+  device_updated_at: 2015-09-09 19:46:34
+  model_name: MyString
+  os_version: MyString

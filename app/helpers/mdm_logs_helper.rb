@@ -1,0 +1,2 @@
+module MdmLogsHelper
+end

@@ -1,0 +1,41 @@
+<%= form_for(@mdm_log) do |f| %>
+  <% if @mdm_log.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mdm_log.errors.count, "error") %> prohibited this mdm_log from being saved:</h2>
+
+      <ul>
+      <% @mdm_log.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :extracted_date %><br>
+    <%= f.datetime_select :extracted_date %>
+  </div>
+  <div class="field">
+    <%= f.label :tel_number %><br>
+    <%= f.text_field :tel_number %>
+  </div>
+  <div class="field">
+    <%= f.label :user_name %><br>
+    <%= f.text_field :user_name %>
+  </div>
+  <div class="field">
+    <%= f.label :device_updated_at %><br>
+    <%= f.datetime_select :device_updated_at %>
+  </div>
+  <div class="field">
+    <%= f.label :model_name %><br>
+    <%= f.text_field :model_name %>
+  </div>
+  <div class="field">
+    <%= f.label :os_version %><br>
+    <%= f.text_field :os_version %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

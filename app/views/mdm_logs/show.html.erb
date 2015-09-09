@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Extracted date:</strong>
+  <%= @mdm_log.extracted_date %>
+</p>
+
+<p>
+  <strong>Tel number:</strong>
+  <%= @mdm_log.tel_number %>
+</p>
+
+<p>
+  <strong>User name:</strong>
+  <%= @mdm_log.user_name %>
+</p>
+
+<p>
+  <strong>Device updated at:</strong>
+  <%= @mdm_log.device_updated_at %>
+</p>
+
+<p>
+  <strong>Model name:</strong>
+  <%= @mdm_log.model_name %>
+</p>
+
+<p>
+  <strong>Os version:</strong>
+  <%= @mdm_log.os_version %>
+</p>
+
+<%= link_to 'Edit', edit_mdm_log_path(@mdm_log) %> |
+<%= link_to 'Back', mdm_logs_path %>

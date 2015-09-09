@@ -1,4 +1,5 @@
 Dashboard::Application.routes.draw do
+
   #get "user_sessions/new"
   #get "user_sessions/create"
   #get "user_sessions/destroy"
@@ -8,6 +9,7 @@ Dashboard::Application.routes.draw do
   resources :users, :except => [:new, :create]
 
   resources :kanri_daichos, :only => [:index, :show]
+  resources :mdm_logs, :only => [:index, :show]
 
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout
