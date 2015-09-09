@@ -1,0 +1,31 @@
+<h1>Listing kanri_daichos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Toiawase</th>
+      <th>Google</th>
+      <th>Birthday</th>
+      <th>Prefecture</th>
+      <th>Kasetsu name</th>
+      <th>Tel number</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kanri_daichos.each do |kanri_daicho| %>
+      <tr>
+        <td><%= kanri_daicho.toiawase_id %></td>
+        <td><%= kanri_daicho.google_id %></td>
+        <td><%= kanri_daicho.birthday %></td>
+        <td><%= kanri_daicho.prefecture %></td>
+        <td><%= kanri_daicho.kasetsu_name %></td>
+        <td><%= kanri_daicho.tel_number %></td>
+        <td><%= link_to 'Show', kanri_daicho %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

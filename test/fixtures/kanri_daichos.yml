@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  toiawase_id: MyString
+  google_id: MyString
+  birthday: 2015-09-09
+  prefecture: MyString
+  kasetsu_name: MyString
+  tel_number: MyString
+
+two:
+  toiawase_id: MyString
+  google_id: MyString
+  birthday: 2015-09-09
+  prefecture: MyString
+  kasetsu_name: MyString
+  tel_number: MyString

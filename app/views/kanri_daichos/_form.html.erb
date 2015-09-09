@@ -1,0 +1,41 @@
+<%= form_for(@kanri_daicho) do |f| %>
+  <% if @kanri_daicho.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@kanri_daicho.errors.count, "error") %> prohibited this kanri_daicho from being saved:</h2>
+
+      <ul>
+      <% @kanri_daicho.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :toiawase_id %><br>
+    <%= f.text_field :toiawase_id %>
+  </div>
+  <div class="field">
+    <%= f.label :google_id %><br>
+    <%= f.text_field :google_id %>
+  </div>
+  <div class="field">
+    <%= f.label :birthday %><br>
+    <%= f.date_select :birthday %>
+  </div>
+  <div class="field">
+    <%= f.label :prefecture %><br>
+    <%= f.text_field :prefecture %>
+  </div>
+  <div class="field">
+    <%= f.label :kasetsu_name %><br>
+    <%= f.text_field :kasetsu_name %>
+  </div>
+  <div class="field">
+    <%= f.label :tel_number %><br>
+    <%= f.text_field :tel_number %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
