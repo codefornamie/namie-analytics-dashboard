@@ -1,14 +1,14 @@
-<h1>Listing kanri_daichos</h1>
-
+<h1>タブレット管理台帳 一覧</h1>
+<%= page_entries_info @kanri_daichos %>
 <table>
   <thead>
     <tr>
-      <th>Toiawase</th>
-      <th>Google</th>
-      <th>Birthday</th>
-      <th>Prefecture</th>
-      <th>Kasetsu name</th>
-      <th>Tel number</th>
+      <th>問い合わせ番号</th>
+      <th>Googleメールアドレス</th>
+      <th>誕生日</th>
+      <th>避難先都道府県</th>
+      <th>避難先仮設住宅名</th>
+      <th>タブレット電話番号</th>
       <th></th>
       <th></th>
       <th></th>
@@ -24,8 +24,11 @@
         <td><%= kanri_daicho.prefecture %></td>
         <td><%= kanri_daicho.kasetsu_name %></td>
         <td><%= kanri_daicho.tel_number %></td>
-        <td><%= link_to 'Show', kanri_daicho %></td>
+        <td><%= link_to '詳細', kanri_daicho %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<br />
+
+<%= paginate @kanri_daichos %>

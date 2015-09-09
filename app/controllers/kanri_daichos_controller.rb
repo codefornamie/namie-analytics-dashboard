@@ -4,7 +4,7 @@ class KanriDaichosController < ApplicationController
   # GET /kanri_daichos
   # GET /kanri_daichos.json
   def index
-    @kanri_daichos = KanriDaicho.all
+    @kanri_daichos = KanriDaicho.page(params[:page])
   end
 
   # GET /kanri_daichos/1
