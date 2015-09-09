@@ -5,7 +5,7 @@ Dashboard::Application.routes.draw do
   root :to => 'index#index'
   resources :index
   resources :user_sessions
-  resources :users
+  resources :users, :except => [:new, :create]
 
   resources :kanri_daichos, :only => [:index, :show]
 
