@@ -49,3 +49,6 @@ end
 
 # paging
 gem 'kaminari'
+
+# authentication
+gem 'sorcery'
