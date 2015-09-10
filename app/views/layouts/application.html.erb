@@ -11,7 +11,7 @@
   <div id="nav">
     <%= link_to "トップ", '/' %> |
     <% if current_user %>
-      <%= link_to "プロフィール編集", edit_user_path(current_user.id) %> |
+      <%= link_to "アカウント編集", edit_user_path(current_user.id) %> |
       <%= link_to "ログアウト", :logout, method: :post %>
     <% else %>
       <%# link_to "アカウント登録", new_user_path %>
