@@ -3,7 +3,7 @@
 one:
   extracted_date: 2015-09-09 19:46:34
   tel_number: MyString
-  user_name: MyString
+  user_name: 00001
   device_updated_at: 2015-09-09 19:46:34
   model_name: MyString
   os_version: MyString
@@ -11,7 +11,7 @@ one:
 two:
   extracted_date: 2015-09-09 19:46:34
   tel_number: MyString
-  user_name: MyString
+  user_name: 00002
   device_updated_at: 2015-09-09 19:46:34
   model_name: MyString
   os_version: MyString

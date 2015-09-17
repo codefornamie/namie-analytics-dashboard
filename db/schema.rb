@@ -29,6 +29,29 @@ ActiveRecord::Schema.define(version: 20150909084139) do
 
   add_index "logins", ["google_id"], name: "google_id", using: :btree
 
+  create_table "mdm_app_logs", id: false, force: true do |t|
+    t.string  "tel_number",      limit: 32,  default: "", null: false
+    t.string  "serial_number",   limit: 64,  default: "", null: false
+    t.string  "name",            limit: 64,  default: "", null: false
+    t.integer "member_id"
+    t.integer "section1_name"
+    t.integer "section2_name"
+    t.integer "section3_name"
+    t.integer "section4_name"
+    t.integer "arb1"
+    t.integer "arb2"
+    t.integer "arb3"
+    t.integer "arb4"
+    t.string  "device_name",     limit: 128
+    t.string  "imei",            limit: 128
+    t.string  "os_version",      limit: 32
+    t.string  "app_name",        limit: 128
+    t.string  "app_version",     limit: 32
+    t.string  "package_name",    limit: 128, default: "", null: false
+    t.boolean "is_preinstalled"
+    t.integer "invoke_count"
+  end
+
   create_table "mdm_logs", force: true do |t|
     t.datetime "extracted_date"
     t.string   "tel_number",        limit: 16
@@ -41,6 +64,27 @@ ActiveRecord::Schema.define(version: 20150909084139) do
   end
 
   add_index "mdm_logs", ["extracted_date", "user_name"], name: "extracted_date", unique: true, using: :btree
+
+  create_table "seminar_attendees", force: true do |t|
+    t.date   "seminar_date"
+    t.string "seminar_place", limit: 64
+    t.string "toiawase_id",   limit: 32
+  end
+
+  create_table "softbank_app_usage", force: true do |t|
+    t.date    "shipped_date"
+    t.string  "tel_number",                limit: 32
+    t.string  "toiawase_id",               limit: 32
+    t.string  "imei",                      limit: 64
+    t.integer "invoke_count"
+    t.integer "packet_usage_201502"
+    t.integer "packet_usage_201503"
+    t.integer "packet_usage_201504"
+    t.integer "packet_usage_201505"
+    t.integer "packet_usage_201506"
+    t.integer "packet_usage_201507"
+    t.date    "pattern_file_updated_date"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",            null: false

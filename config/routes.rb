@@ -6,10 +6,12 @@ Dashboard::Application.routes.draw do
   root :to => 'index#index'
   resources :index
   resources :user_sessions
-  resources :users, :except => [:new, :create]
+  resources :users, :except => [:new, :create, :destroy]
 
   resources :kanri_daichos, :only => [:index, :show]
   resources :mdm_logs, :only => [:index, :show]
+
+  resources :prefecture_activities, :only => [:index]
 
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout

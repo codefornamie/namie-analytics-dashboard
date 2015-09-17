@@ -1,0 +1,40 @@
+<h1>都道府県別ユーザーデータ</h1>
+<div>
+  <%= form_tag("/index", method: 'get') do %>
+    <%= label_tag(:prefecture, "都道府県名") %>
+    <%= text_field_tag(:prefecture) %>
+    <%= submit_tag("絞り込み") %>
+  <% end %>
+</div>
+<table>
+  <thead>
+  <tr>
+    <th>問合せ番号</th>
+    <th>デバイス更新日</th>
+    <th>端末名</th>
+    <th>OSバージョン</th>
+    <th>Googleメール</th>
+    <th>誕生日</th>
+    <th>都道府県名</th>
+    <th>なみえアプリ起動回数</th>
+    <th>なみえアプリ最新起動日時</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @prefecture_activities.rows.each do |pa| %>
+    <tr>
+      <td><%= pa[0] %></td>
+      <td><%= pa[1] %></td>
+      <td><%= pa[2] %></td>
+      <td><%= pa[3] %></td>
+      <td><%= pa[4] %></td>
+      <td><%= pa[5] %></td>
+      <td><%= pa[6] %></td>
+      <td><%= pa[7] %></td>
+      <td><%= pa[8] %></td>
+      <td><%= pa[9] %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
