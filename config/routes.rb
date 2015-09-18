@@ -9,6 +9,7 @@ Dashboard::Application.routes.draw do
   resources :users, :except => [:new, :create, :destroy]
 
   resources :kanri_daichos, :only => [:index, :show]
+  get 'mdm_logs/active_rate' => 'mdm_logs#active_rate'
   resources :mdm_logs, :only => [:index, :show]
 
   resources :prefecture_activities, :only => [:index]

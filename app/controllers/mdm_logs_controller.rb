@@ -13,53 +13,12 @@ class MdmLogsController < ApplicationController
   def show
   end
 
-  # GET /mdm_logs/new
-  def new
-    @mdm_log = MdmLog.new
-  end
+  def active_rate
+    @target_extracted_date = MdmLog.maximum(:extracted_date)
+    @past_month_date = @target_extracted_date - 30.days
 
-  # GET /mdm_logs/1/edit
-  def edit
-  end
-
-  # POST /mdm_logs
-  # POST /mdm_logs.json
-  def create
-    @mdm_log = MdmLog.new(mdm_log_params)
-
-    respond_to do |format|
-      if @mdm_log.save
-        format.html { redirect_to @mdm_log, notice: 'Mdm log was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @mdm_log }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @mdm_log.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /mdm_logs/1
-  # PATCH/PUT /mdm_logs/1.json
-  def update
-    respond_to do |format|
-      if @mdm_log.update(mdm_log_params)
-        format.html { redirect_to @mdm_log, notice: 'Mdm log was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @mdm_log.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /mdm_logs/1
-  # DELETE /mdm_logs/1.json
-  def destroy
-    @mdm_log.destroy
-    respond_to do |format|
-      format.html { redirect_to mdm_logs_url }
-      format.json { head :no_content }
-    end
+    @all_count = MdmLog.where(extracted_date: @target_extracted_date).count
+    @active_count = MdmLog.where(extracted_date: @target_extracted_date).where("device_updated_at > '#{@past_month_date}'").count
   end
 
   private

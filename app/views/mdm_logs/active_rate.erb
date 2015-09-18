@@ -1,0 +1,11 @@
+<h1>アクティブ率</h1>
+<h2>対象日: <%= @target_extracted_date.strftime("%Y/%m/%d") %></h2>
+<div>
+  全体
+  <%= @all_count %>
+</div>
+<div>
+  アクティブ
+  <%= @active_count %>
+</div>
+<h3>アクティブ率： <%= (@active_count / @all_count.to_f * 100).round(2) %>%</h3>
