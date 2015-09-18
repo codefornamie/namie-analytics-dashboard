@@ -50,6 +50,7 @@ end
 group :development do
   gem 'capistrano'
   gem 'capistrano-rails'
+  gem 'capistrano-passenger'
 end
 
 # Use debugger
